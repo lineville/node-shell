@@ -11,16 +11,15 @@ process.stdin.on('data', (data) => {
     .trim()
     .split(' ')[0];
 
-  const args = data.toString()
+  const fileName = data.toString()
     .trim()
-    .split(' ')
-    .slice(1);
+    .split(' ')[1];
   switch (cmd) {
     case 'pwd': pwd();
     break;
     case 'ls': ls();
     break;
-    case 'cat': cat(args);
+    case 'cat': cat(fileName);
     break;
     default: console.log('bad command');
   }
