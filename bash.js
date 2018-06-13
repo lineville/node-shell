@@ -2,6 +2,7 @@ const pwd = require('./pwd.js');
 const ls = require('./ls.js');
 const cat = require('./cat.js');
 const curl = require('./curl.js');
+const quit = require('./quit.js');
 
 // output a prompt
 const done = (output) => {
@@ -20,6 +21,8 @@ process.stdin.on('data', (data) => {
     .trim()
     .split(' ')[1];
   switch (cmd) {
+    case 'quit': quit();
+    break;
     case 'pwd': pwd(done);
     break;
     case 'ls': ls(done);
